@@ -1,23 +1,27 @@
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class MatriceTest {
+
     int[][] Y;
 
     @BeforeEach
     void setUp() {
-        Y = initMatrice(M,N,A,B);
+        Y = Matrice.initMatrice(2,3,5,10);
     }
 
-    void matrice_test(int M, int N, int A,int  B) {
-        assertEquals( M, Y.length);
-        for(int i = 0; i < M; i++){
-            assertEquals(N, Y[i]);
-            for (int j = 0; j < N; j++){
-                assertTrue( Y[i][j] <= B);
-                assertTrue(A <= Y[i][j]);
+    @Test
+    void matrice_test() {
+        assertEquals( 2, Y.length);
+        for(int i = 0; i < 2; i++){
+            assertEquals(3, Y[i]);
+            for (int j = 0; j < 3; j++){
+                assertTrue( Y[i][j] <= 10);
+                assertTrue(5 <= Y[i][j]);
             }
         }
     }
+
 }
