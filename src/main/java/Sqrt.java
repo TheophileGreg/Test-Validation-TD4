@@ -1,6 +1,11 @@
 public class Sqrt {
 
     public static double[] racine(int a, int b){
-        return new double[]{1.0};
+        double res[] = new double[b-a];
+
+        for (int i = a; i <= b; i++){
+            res[i-a] = Math.sqrt(i);
+        }
+        return res;
     }
 }
